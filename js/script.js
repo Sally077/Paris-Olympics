@@ -1,5 +1,4 @@
 
-    alert(11)
     var data3=selectNumberStringvalue=eurkey="";
     var finalcal=0;
     APIKEY1="rKYJpxskSyUuuicyEbuZ8Q3B2ZEI4XpwVr7fhzCY";
