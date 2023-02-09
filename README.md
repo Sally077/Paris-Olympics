@@ -30,7 +30,7 @@ Have a quality README (including a unique name, description, technologies used, 
 
 
 
-User Story
+#User Story
 To produce a responsive website for users looking for information about the Paris Olympics 2024. The user would like to be able to check out venues in France if visiting for the olympics and be able to convert currency from one currency value into euros. The user would like to be able to find out how many days are available until the Olympics.
 
 
@@ -96,8 +96,7 @@ We used the following resources to help us:
 
 
 
-For London Data
-https://openweathermap.org/api/geocoding-api
+
 
 To help me work out how to apply jquery to my code
 https://api.jquery.com/jQuery.ajax/#jQuery-ajax-settings-settings
