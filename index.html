@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
     <title>Paris Olympics 2024</title>
 
 </head>
@@ -62,19 +62,21 @@
     </div>
   </div>
 </div>
-<!--ADD BOOTSTRAP TO THIS DIV segment for Currency Convertor----->
+
+<div class="flex-container">
+  <!--ADD BOOTSTRAP TO THIS DIV segment for Currency Convertor----->
 <div id="forex">
   <input type="number" placeholder="AMOUNT" id="amount">
   <select id="base-currencies"></select> <br><br><br>
   <button type="button" id="convert" >Convert</button>
-  <br><br><br><br>
+  <br><br><span>server may take 10 secs to respond to our request.</span><br><br>
   <select id="quote-currency">
       <option value="EUR">EUR</option>
     </select>
     <input type="number" id="euros">
     <script src="./js/script.js"></script>
 </div>
-<!--ADD BOOTSTRAP TO THIS DIV segment----->
+<!--ADD BOOTSTRAP TO THIS DIV for Countdown Timer segment----->
 <br>
 <br>
 <br>
@@ -88,7 +90,16 @@
 <br>
 <br>
 <br>
+<!--ADD BOOTSTRAP TO THIS DIV for Flags segment----->
+<div>    <select id="countries"></select>
+  <img id="flag" src="" alt="flag"></div>
+  <br>
+<br>
+<br>
+<br>
 <!--------------------------------------------->
+</div>
+
   
   <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
  
@@ -100,6 +111,6 @@
   
   <!-- Code to the JavaScript File -->
   <script src=".\js\currencyConvertor.js"></script>
-
+  <script src=".\js\flags.js"></script>
 </body>
 </html>
