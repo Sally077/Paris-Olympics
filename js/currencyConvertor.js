@@ -21,6 +21,7 @@ $(document).ready(function() {
 });
 
 $('#convert').click(function() {
+  $("#euros").val("");
     var inputValue = $("#amount").val();
     var inputNumber = parseFloat(inputValue);
 

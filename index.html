@@ -17,6 +17,9 @@
 </head>
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+  <script src=".\js\countDownTimer.js"></script>
 <!---Nav Bar-->
 
 <!---Bootstrap Cards-->
@@ -59,7 +62,7 @@
     </div>
   </div>
 </div>
-<!--ADD BOOTSTRAP TO THIS DIV segment----->
+<!--ADD BOOTSTRAP TO THIS DIV segment for Currency Convertor----->
 <div id="forex">
   <input type="number" placeholder="AMOUNT" id="amount">
   <select id="base-currencies"></select> <br><br><br>
@@ -71,6 +74,15 @@
     <input type="number" id="euros">
     <script src="./js/script.js"></script>
 </div>
+<!--ADD BOOTSTRAP TO THIS DIV segment----->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="timer"></div>
+
 <!--------------------------------------------->
   
   <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
@@ -82,6 +94,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   
   <!-- Code to the JavaScript File -->
-  <script src="script.js"></script>
+  <script src=".\js\currencyConvertor.js"></script>
+
 </body>
 </html>
