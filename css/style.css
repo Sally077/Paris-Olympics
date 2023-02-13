@@ -95,6 +95,7 @@ body {
     margin-top: 25px;
     margin-right: 200px;
     margin-left: 200px;
+    border-color: rgb(255, 0, 30);
   }
   .flex-container > div {
    
