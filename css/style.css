@@ -88,14 +88,17 @@ body {
 
   .flex-container {
     display: flex;
+    justify-content:space-between;
     flex-wrap: nowrap;
-    
+    /* margin: 200px; */
     /* background-color: DodgerBlue; */
-    
+    margin-top: 25px;
+    margin-right: 200px;
+    margin-left: 200px;
   }
   .flex-container > div {
    
-    margin: 200px;
+    /* margin: 200px; */
   
   
     border-color: blue;
