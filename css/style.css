@@ -95,7 +95,9 @@ body {
     margin-top: 25px;
     margin-right: 200px;
     margin-left: 200px;
-    border-color: rgb(255, 0, 30);
+    border-color: rgb(53, 39, 97);
+    border-width: 5px ;
+    
   }
   .flex-container > div {
    
@@ -106,6 +108,11 @@ body {
    
    
     
+  }
+  .picoly {
+width: 250px;
+height: 250px;
+text-decoration: line-through;
   }
 
   
