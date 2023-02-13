@@ -22,6 +22,9 @@
   <script src=".\js\countDownTimer.js"></script>
 <!---Nav Bar-->
 
+
+<!-- <h1  id="timer"> <span class="badge badge-secondary">to go</span></h1> -->
+
 <!---Bootstrap Cards-->
 <div class="wrapper-grey padded">
   <div class="container">
@@ -66,37 +69,43 @@
 <div class="flex-container">
   <!--ADD BOOTSTRAP TO THIS DIV segment for Currency Convertor----->
 <div id="forex">
+  <h1>Currency Convertor</h1>
+  <select id="base-currencies" class="orm-control form-control-lg"></select> 
+  <br>
   <input type="number" placeholder="AMOUNT" id="amount">
-  <select id="base-currencies"></select> <br><br><br>
-  <button type="button" id="convert" >Convert</button>
+  <!-- <button type="button" id="convert" >Convert</button> -->
+  <br><br><br>
+  <button type="button" id="convert"  class="btn btn-primary">Convert</button>
   <br><br><span>server may take 10 secs to respond to our request.</span><br><br>
-  <select id="quote-currency">
+  <select id="quote-currency" class="orm-control form-control-lg">
+    
       <option value="EUR">EUR</option>
     </select>
-    <input type="number" id="euros">
-    <script src="./js/script.js"></script>
+
+    <!-- <select class="custom-select my-1 mr-sm-2" >
+      <option value="EUR">EUR</option>
+    </select> -->
+    <!-- <input type="number" id="euros"> -->
+    <input class="form-control" type="number" id="euros" placeholder="" readonly>
+    <br>
+    <!-- <script src="./js/script.js"></script> -->
 </div>
 <!--ADD BOOTSTRAP TO THIS DIV for Countdown Timer segment----->
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<!-- <br> <br> <br> <br> <br> <br>
 <div id="timer"></div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br><br><br> -->
+<div>
+  <h1 id="timer"> <span class="badge badge-secondary"></span></h1>
+  <img class="picoly" src=".\img\oly.jpg" alt="">
+</div>
+
 <!--ADD BOOTSTRAP TO THIS DIV for Flags segment----->
-<div>    <select id="countries"></select>
+<div>  
+  <h1> Flags</h1>
+  <select id="countries" class="orm-control form-control-lg"></select>
+  <br> <br>
   <img id="flag" src="" alt="flag"></div>
-  <br>
-<br>
-<br>
-<br>
+  <br> <br> <br> <br>
 <!--------------------------------------------->
 </div>
 

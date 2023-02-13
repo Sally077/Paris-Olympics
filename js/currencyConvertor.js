@@ -28,7 +28,7 @@ $('#convert').click(function() {
     var selectValue = $("#base-currencies").val();
     var selectNumberString = selectValue.toString();
 
-    console.log(inputNumber,selectNumberString);
+    // console.log(inputNumber,selectNumberString);
 
 
     $.ajax({
@@ -45,7 +45,7 @@ $('#convert').click(function() {
                     if (key==selectNumberString) {
                          selectNumberStringvalue=value;
                     }
-                    console.log(key,value)
+                    // console.log(key,value)
               
             } else {
                 
