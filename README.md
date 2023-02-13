@@ -30,7 +30,7 @@ Have a quality README (including a unique name, description, technologies used, 
 
 
 
-#User Story
+# User Story
 To produce a responsive website for users looking for information about the Paris Olympics 2024. The user would like to be able to check out venues in France if visiting for the olympics and be able to convert currency from one currency value into euros. The user would like to be able to find out how many days are available until the Olympics.
 
 
@@ -38,24 +38,21 @@ To produce a responsive website for users looking for information about the Pari
 
 
 
-#Pseudocode
+
+
+# Achievements
 
 
 
-
-#Achievements
-
-We were
-
-#Issues
+# Issues
 
 
 
 
 
-#Improvements
+# Improvements
 
-If 
+
 
 
 
@@ -86,23 +83,33 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 
 
-## Credits
+## Contributors
 
 Rajoo Uddin, Reagan Rodrigues, Sally Hedges, Sandra Antohe, Seyed Parsa Hemmati Hosseini
 
 
+## Credits
 
 We used the following resources to help us:
-
-
-
 
 
 To help me work out how to apply jquery to my code
 https://api.jquery.com/jQuery.ajax/#jQuery-ajax-settings-settings
 
 
+modal designs for bootstrap
 
+https://mdbootstrap.com/docs/b4/jquery/modals/forms/
+
+
+Support with local storage
+
+https://www.youtube.com/watch?v=LfeOLVGHiXI&t=242s
+
+ Aditi's video on creating forms and saving to local storage
+
+ https://www.google.com/search?q=how+to+add+local+storage+to+form&rlz=1C1SQJL_enGB1032GB1032&oq=how+to+add+local+storage+to+form&aqs=chrome..69i57j33i160l4j33i15i22i29i30.18880j0j7&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:b634fbd9,vid:hG0YDpePCjI
+ 
 
 
 
@@ -112,7 +119,7 @@ https://api.jquery.com/jQuery.ajax/#jQuery-ajax-settings-settings
 We have chosen a MIT license for this project
 ---
 
-## Badges
+
 
 
 
@@ -120,12 +127,29 @@ We have chosen a MIT license for this project
 
 
 
-## How to Contribute
+
 
 
 
 ## Tests
 
+Nav Bar
+Test to see if Nav Bar buttons and links go to each section
 
+Hotel Search API
 
+Test button 1 to see if when button for region is clicked details/image of hotel will appear
+Test button 2 to see if when button for region is clicked details/image of hotel will appear
+Test button 3 to see if when button for region is clicked details/image of hotel will appear
+Test to check correct number of hotels required is selcted and appended to page
 
+Currency Converter API
+Test to see if currency api converts from one curency to euros
+Test to see if currency api converts from another currency to euros
+Check and compare on currency convertor websites to check conversion is accurate
+
+Modal 
+Test to see if Book Tickets button is pressed modal will appear
+Test to see if when data is input for name and send button is pressed this is connected
+Test to see if when data is input for e-mail and send button is pressed this is connected
+Test to see if data saves to local storage
