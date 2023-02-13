@@ -89,14 +89,15 @@ body {
   .flex-container {
     display: flex;
     flex-wrap: nowrap;
+    
     /* background-color: DodgerBlue; */
     
   }
   .flex-container > div {
    
-   
+    margin: 200px;
   
-    margin: 150px;
+  
     border-color: blue;
    
    
