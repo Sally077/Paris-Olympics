@@ -85,7 +85,6 @@ body {
     font-weight: lighter;
   }
   /* write from here */
-
   .flex-container {
     display: flex;
     justify-content:space-between;
@@ -115,5 +114,3 @@ width: 250px;
 height: 250px;
 text-decoration: line-through;
   }
-
-  
