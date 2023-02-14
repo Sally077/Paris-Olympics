@@ -87,6 +87,23 @@
 <!-- hotels api here  -->
 
 <section>
+  <!--Collects data about arrival date, departure date, and has buttons for different cities near Paris to look for hotels-->
+  Arrival Date: <input type="date" name="arrivalDate" id="arrivalDate">
+  Departure Date: <input type="date" name="departureDate" id="departureDate"></br>
+  City:
+  <button type="button" class="btn btn-primary" id="Paris" onclick="getHotels('-1456928')">Paris</button>
+  <button type="button" class="btn btn-primary" id="Ile-Saint-Denis" onclick="getHotels('-1464547')">Ile-Saint-Denis</button>
+  <button type="button" class="btn btn-primary" id="Marseille" onclick="getHotels('-1449947')">Marseille</button>
+
+  <!--Displays 3 top hotels in a cardbox-->
+  <div id="hotels" style="width: 18rem;">
+      <!-- <img src="https://cf.bstatic.com/xdata/images/hotel/square60/178118125.jpg?k=e856e5e8a641360e3af60c612d609c0d4d078af020f3ef7ba9d7f0a3d3f92d58&o=" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">Hotel Sample</h5>
+          <p class="card-text">This is sample description of the card</p>
+          <a href="#" class="btn btn-primary">Reserve</a>
+      </div> -->
+  </div>
 
 
 </section>
@@ -187,5 +204,6 @@
   <!-- Code to the JavaScript File -->
   <script src=".\js\currencyConvertor.js"></script>
   <script src=".\js\flags.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
