@@ -114,3 +114,13 @@ width: 250px;
 height: 250px;
 text-decoration: line-through;
   }
+/* modal css styling */
+.modal-body {
+background-color: aqua;
+}
+
+#send {
+  background-color: aqua; 
+  border-radius: 25px;
+  border: solid white;
+}
