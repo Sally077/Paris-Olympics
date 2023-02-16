@@ -15,6 +15,7 @@ $('#send').click(function() {
 });
 
 
+
 // Hotels API
 
 // creates a function that will be called when the button is clicked
@@ -27,37 +28,37 @@ function getHotels(destinationID) {
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://booking-com.p.rapidapi.com/v1/hotels/search?dest_id="+ destinationID +"&order_by=popularity&filter_by_currency=EUR&adults_number=2&room_number=1&checkout_date="+ departureDate +"&units=metric&checkin_date="+ arrivalDate +"&dest_type=city&locale=en-gb&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=0&include_adjacency=true&children_number=2",
+        "url": "https://booking-com.p.rapidapi.com/v1/hotels/search?dest_id="+ destinationID +"&order_by=popularity&filter_by_currency=GBP&adults_number=2&room_number=1&checkout_date="+ departureDate +"&units=metric&checkin_date="+ arrivalDate +"&dest_type=city&locale=en-gb&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=0&include_adjacency=true&children_number=2",
         "method": "GET",
         "headers": {
             "X-RapidAPI-Key": "6d65fccad2msh6dbae654ae49311p1052d0jsn36975f6b60f0",
             "X-RapidAPI-Host": "booking-com.p.rapidapi.com"
         }
     };
+    
     $.ajax(settings).done(function (response) {
-        console.log(response.result[0]);
-        console.log(arrivalDate);
-        var hotelDiv = document.getElementById("hotels");
-        var hotelImage = document.createElement("img");
-        hotelImage.setAttribute("src", response.result[0].main_photo_url);
-        hotelDiv.append(hotelImage);
-        var hotelCard = document.createElement("div");
-        hotelCard.setAttribute("class", "card-body");
-        var hotelName = document.createElement("h5");
+        console.log(response);
+        var hotelName = document.getElementById("hotel-name");
         hotelName.textContent = response.result[0].hotel_name;
-        hotelName.setAttribute("class", "card-title");
-        hotelCard.append(hotelName);
-        var hotelDescription = document.createElement("p");
-        hotelDescription.setAttribute("class", "card-text");
-        hotelDescription.textContent = "Guest ratings: " + response.result[0].review_score_word;
-        hotelCard.append(hotelDescription);
-        var hotelPrice = document.createElement("p");
-        hotelPrice.setAttribute("class", "card-text");
-        hotelDescription.textContent = "Gross price: " + response.result[0].price_breakdown.gross_price;
-        hotelCard.append(hotelDescription);
-        hotelDiv.append(hotelCard);
+        var hotelPrice = document.getElementById("hotel-price");
+        hotelPrice.textContent = response.result[0].min_total_price + " GBP";
+        const settings2 = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://booking-com.p.rapidapi.com/v1/hotels/photos?hotel_id=" + response.result[0].hotel_id + "&locale=en-gb",
+            "method": "GET",
+            "headers": {
+                "X-RapidAPI-Key": "6d65fccad2msh6dbae654ae49311p1052d0jsn36975f6b60f0",
+                "X-RapidAPI-Host": "booking-com.p.rapidapi.com"
+            }
+        };
+
+        $.ajax(settings2).done(function (response2) {
+            //prints the url of the first image
+            console.log(response2[0].url_max);
+            var hotelImage = document.getElementById("hotel-image");
+            hotelImage.setAttribute("src", response2[0].url_max);
+        });
 
     });
 }
-
-
