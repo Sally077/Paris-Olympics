@@ -38,10 +38,56 @@ function getHotels(destinationID) {
 
     $.ajax(settings).done(function (response) {
         console.log(response.result[0])
-        var hotelName = document.getElementById("hotel-name");
-        hotelName.textContent = response.result[0].hotel_name;
-        var hotelPrice = document.getElementById("hotel-price");
-        hotelPrice.textContent = response.result[0].min_total_price + " GBP";
+        // Create the card element
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        // Create the d-flex div
+        const dFlex = document.createElement("div");
+        dFlex.classList.add("d-flex");
+
+        // Create the image element
+        const image = document.createElement("img");
+        image.id = "hotel-image";
+        image.classList.add("card-img-top", "flex-shrink-0", "me-3");
+        image.alt = "";
+        image.style.width = "200px";
+        image.style.objectFit = "cover";
+
+        // Create the card body element
+        const cardBody = document.createElement("div");
+        cardBody.id = "hotel-info";
+        cardBody.classList.add("card-body");
+
+        // Create the title element
+        const title = document.createElement("h2");
+        title.id = "hotel-name";
+        title.classList.add("card-title");
+        title.textContent = response.result[0].hotel_name;
+
+        // Create the subtitle element
+        const subtitle = document.createElement("h3");
+        subtitle.id = "hotel-price";
+        subtitle.textContent = "£" + response.result[0].min_total_price;
+        subtitle.classList.add("card-subtitle", "mb-2", "text-muted");
+
+        // Create the address element
+        const address = document.createElement("p");
+        address.id = "hotel-address";
+        address.classList.add("card-text");
+
+        // Append the elements to the document
+        card.appendChild(dFlex);
+        dFlex.appendChild(image);
+        dFlex.appendChild(cardBody);
+        cardBody.appendChild(title);
+        cardBody.appendChild(subtitle);
+        cardBody.appendChild(address);
+
+        // Add the card to a parent element
+        const parent = document.getElementById("hotels");
+        parent.appendChild(card);
+
         const settings2 = {
             "async": true,
             "crossDomain": true,
@@ -65,7 +111,7 @@ function getHotels(destinationID) {
             link.classList.add("btn", "btn-primary");
             link.textContent = "Book Hotel Now";
             link.id = "hotel-link";
-            document.getwElementById("hotel-info").appendChild(link);
+            document.getElementById("hotel-info").appendChild(link);
         });
 
     });

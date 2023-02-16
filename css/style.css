@@ -80,7 +80,6 @@ body {
     flex: 1;
     display: flex;
   }
-  
   .card .d-flex img {
     flex: 0 0 200px;
     height: 100%;
@@ -88,7 +87,10 @@ body {
   }
   .card-title {
     color: black;
-  }  
+  }
+  .card-text {
+    color: black;
+  }
   .features img {
     width: 100px;
   }
