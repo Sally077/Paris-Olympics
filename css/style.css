@@ -39,6 +39,8 @@ body {
     position: relative;
     border-radius: 5px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
   }
   .card-user {
     position: absolute;
@@ -74,6 +76,19 @@ body {
   .card-link:hover{
     opacity: 0.1;
   }
+  .card .d-flex {
+    flex: 1;
+    display: flex;
+  }
+  
+  .card .d-flex img {
+    flex: 0 0 200px;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card-title {
+    color: black;
+  }  
   .features img {
     width: 100px;
   }
