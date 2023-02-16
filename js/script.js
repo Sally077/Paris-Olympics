@@ -37,7 +37,7 @@ function getHotels(destinationID) {
     };
 
     $.ajax(settings).done(function (response) {
-        console.log(response.result[0])
+        document.getElementById("hotels").innerHTML = "";
         // Create the card element
         const card = document.createElement("div");
         card.classList.add("card");
