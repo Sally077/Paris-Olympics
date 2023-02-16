@@ -2,7 +2,7 @@ function test() {
     // Retriving data for local storage
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
-    
+
     // Storing data
 
     var name = localStorage.setItem("name", name);
@@ -10,7 +10,7 @@ function test() {
 
 }
 
-$('#send').click(function() {
+$('#send').click(function () {
     $('#modalSubscriptionForm').modal('hide');
 });
 
@@ -28,16 +28,16 @@ function getHotels(destinationID) {
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://booking-com.p.rapidapi.com/v1/hotels/search?dest_id="+ destinationID +"&order_by=popularity&filter_by_currency=GBP&adults_number=2&room_number=1&checkout_date="+ departureDate +"&units=metric&checkin_date="+ arrivalDate +"&dest_type=city&locale=en-gb&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=0&include_adjacency=true&children_number=2",
+        "url": "https://booking-com.p.rapidapi.com/v1/hotels/search?dest_id=" + destinationID + "&order_by=popularity&filter_by_currency=GBP&adults_number=2&room_number=1&checkout_date=" + departureDate + "&units=metric&checkin_date=" + arrivalDate + "&dest_type=city&locale=en-gb&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=0&include_adjacency=true&children_number=2",
         "method": "GET",
         "headers": {
             "X-RapidAPI-Key": "6d65fccad2msh6dbae654ae49311p1052d0jsn36975f6b60f0",
             "X-RapidAPI-Host": "booking-com.p.rapidapi.com"
         }
     };
-    
+
     $.ajax(settings).done(function (response) {
-        console.log(response);
+        console.log(response.result[0])
         var hotelName = document.getElementById("hotel-name");
         hotelName.textContent = response.result[0].hotel_name;
         var hotelPrice = document.getElementById("hotel-price");
@@ -58,6 +58,14 @@ function getHotels(destinationID) {
             console.log(response2[0].url_max);
             var hotelImage = document.getElementById("hotel-image");
             hotelImage.setAttribute("src", response2[0].url_max);
+            var hotelAddress = document.getElementById("hotel-address");
+            hotelAddress.textContent = "This hotel is located at " + response.result[0].address;
+            const link = document.createElement("a");
+            link.href = response.result[0].url;
+            link.classList.add("btn", "btn-primary");
+            link.textContent = "Book Hotel Now";
+            link.id = "hotel-link";
+            document.getwElementById("hotel-info").appendChild(link);
         });
 
     });
