@@ -2,6 +2,7 @@
 body {
     margin: 0;
     font-family: Open-sans, sans-serif;
+    background-color: #e9e4d3;
   }
   h1, h2, h3 {
     font-family: Raleway, Helvetica, sans-serif;
@@ -116,11 +117,54 @@ text-decoration: line-through;
   }
 /* modal css styling */
 .modal-body {
-background-color: aqua;
+background-color: #b2a4c9;
 }
 
 #send {
-  background-color: aqua; 
+  background-color: #b2a4c9; 
   border-radius: 25px;
   border: solid white;
+}
+
+.btn {
+  background-color: #b2a4c9;
+  border: solid #450088;
+}
+
+.wrapper {
+  background-color: #b2a4c9;
+
+}
+
+.input-group-text{
+  background-color: #b2a4c9;
+
+}
+
+.flex-container{
+  background-color: #b2a4c9;
+  border-color: #450088;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+  
+  margin-bottom: 1px;
+  
+}
+
+
+.nav-link  {
+  color: black !important; 
+  position: relative;
+  margin-left: 0;
+  padding:10;
+  margin-right: 100px;
+  font-family: Raleway, Helvetica, sans-serif;
+  font-size: 20px;
+  
+}
+
+a:hover.nav-link {
+  box-shadow: 0px 3px #450088;
+  
 }
