@@ -97,7 +97,7 @@ body::before {
 }
 
 .form-center {
-  width: 50%%;
+  width: 50%;
   position: relative;
 }
 
@@ -120,4 +120,5 @@ body::before {
   #questions .container {
     background-color: var(--cream);
     padding: 20px 10px;
+  }
 }
