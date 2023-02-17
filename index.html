@@ -9,88 +9,127 @@
   <!-- Bootstrap Links and CSS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:300,400,500,700">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">  <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/style.css">
   <title>Paris Olympics 2024</title>
 </head>
 <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-  <script src=".\js\countDownTimer.js"></script>
+  <!---Nav Bar-->
+  <nav class="navbar navbar-expand-lg py-3 fixed-top navbar-light">
+    <div class="container">
+      <a href="#" class="navbar-brand" id="home">Paris Olympics</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="#book" class="nav-link">Book Now</a>
+          </li>
+          <li class="nav-item">
+            <a href="#events" class="nav-link">Events</a>
+          </li>
+          <li class="nav-item">
+            <a href="#hotels" class="nav-link">Search Hotels</a>
+          </li>
+          <li class="nav-item">
+            <a href="#converter" class="nav-link">Currency Converter</a>
+          </li>
+          <li class="nav-item">
+            <a href="#timerflags" class="nav-link">Timer/Flags</a>
+          </li>
+          <li class="nav-item">
+            <a href="#questions" class="nav-link">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<!---Nav Bar-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Converter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Location</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sign Up</a>
-        </li>
-        
-      </ul>
+  <!-- Showcase -->
+  <section>
+    <div class="container">
+      <img class="img-fluid" src="/img/showcase.jpg" alt="">
+    </div>
+  </section>
+  
+  <!-- Modal - Book Tickets -->
+  <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Book Tickets</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <div class="h3">
+              <i class="bi-person prefix grey-text"></i>
+            </div>
+            <input type="text" id="name" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="form3">Your name</label>
+          </div>
+          <div class="md-form mb-4">
+            <div class="h3">
+              <i class="bi-envelope prefix grey-text"></i>
+            </div>
+            <input type="email" id="email" class="form-control validate">
+            <label data-error="wrong" data-success="right" for="email">Your email</label>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <div id="msg"></div>
+          <button id="send" onclick="test()">Send <i class="bi-send ml-1"></i></button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="text-center my-5 p-3" id="book">
+      <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#modalSubscriptionForm">Book Tickets Now</a>
     </div>
   </div>
-</nav>
-
-  <!---Nav Bar-->
 
   <!---Bootstrap Cards-->
-  <div class="wrapper padded">
-    <div class="container">
-      <h2 class="text-center">Paris Olympics 2024</h2>
-      <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://resources.fina.org/photo-resources/2022/04/08/d67ae73d-bf00-4d05-b630-af347d60e016/GettyImages-1331544961.jpg?width=830');">
-            <div class="card-category">Paris Olympics 2024</div>
-            <div class="card-description">
-              <h2>Swimming</h2>
-              <p>Olympics Swimming</p>
+  <div class="container" id="events">
+    <div class="wrapper">
+      <div class="row g-3">
+        <div class="col-md-12 col-lg-4">
+            <div class="card card-1">
+              <div class="card-description">
+                <h2>Swimming</h2>
+                <p>Olympics Swimming</p>
+              </div>
+              <a class="card-link" href="#" ></a>
             </div>
-            <a class="card-link" href="#" ></a>
-          </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.olympicchannel.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/ntg4t1lytzt11bzbnkqv');">
-          <div class="card-category">Paris Olympics 2024</div>
-          <div class="card-description">
-              <h2>Athletics</h2>
-              <p>Olympics Athletics</p>
-          </div>
-            <a class="card-link" href="#" ></a>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://img.olympicchannel.com/images/image/private/t_s_pog_staticContent_hero_lg/f_auto/primary/e1gypbvpnxnxi3dr5o5p');">
-          <div class="card-category">Paris Olympics 2024</div>
-          <div class="card-description">
-              <h2>Rowing</h2>
-              <p>Olympics Rowing</p>
+        <div class="col-md-12 col-lg-4">
+          <div class="card card-2">
+            <div class="card-description">
+                <h2>Athletics</h2>
+                <p>Olympics Athletics</p>
+            </div>
+              <a class="card-link" href="#" ></a>
           </div>
-            <a class="card-link" href="#" ></a>
         </div>
-      </div>
+        <div class="col-md-12 col-lg-4">
+          <div class="card card-3">
+            <div class="card-description">
+                <h2>Rowing</h2>
+                <p>Olympics Rowing</p>
+            </div>
+              <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!---Bootstrap Cards for hotels-->
-  <div class="container mt-5 text-center">
+  <!---Hotel Search-->
+  <div class="container mt-5 text-center hotel p-4" id="search">
     <h2>Search for hotels:</h2>
     <div class="row">
       <div class="mx-auto col-10 col-md-8 col-lg-6">
@@ -114,88 +153,146 @@
       <div class="col-12" id="hotels">
         <!-- Hotels will be displayed here -->
       </div>
-
     </div>
   </div>
 
-  <!-- Modal Code Here -->
-  <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Book Tickets</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body mx-3">
-          <div class="md-form mb-5">
-            <i class="fas fa-user prefix grey-text"></i>
-            <input type="text" id="name" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="form3">Your name</label>
-          </div>
-          <div class="md-form mb-4">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="email" id="email" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="email">Your email</label>
-          </div>
-        </div>
-        <div class="modal-footer d-flex justify-content-center">
-          <div id="msg"></div>
-          <button id="send" onclick="test()">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="text-center">
-      <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalSubscriptionForm">Book Tickets Now</a>
-    </div>
-
-    <!--ADD BOOTSTRAP TO THIS DIV segment for Currency Convertor----->
-  <div class="flex-container">
-    <div id="forex">
+  <!-- Currency Convertor -->
+  <div class="container mt-5" id="converter">
+    <div id="forex" class="text-center">
       <h1>Currency Convertor</h1>
-      <select id="base-currencies" class="orm-control form-control-lg"></select> 
+      <select id="base-currencies" class="orm-control form-control-lg mb-2"></select> 
       <br>
       <input type="number" placeholder="AMOUNT" id="amount">
-      <br><br><br>
-      <button type="button" id="convert"  class="btn btn-primary">Convert</button>
+      <br><br>
+      <button type="button" id="convert" class="btn">Convert</button>
       <br><br><span>server may take 10 secs to respond to our request.</span><br><br>
       <select id="quote-currency" class="orm-control form-control-lg">
         <option value="EUR">EUR</option>
       </select>
-        <input class="form-control" type="number" id="euros" placeholder="" readonly>
+      <div class="form-center">
+        <input class="form-control text-center mt-3" type="number" id="euros" placeholder="" readonly>
+      </div>
       <br>
     </div>
+  </div>
 
-    <!--ADD BOOTSTRAP TO THIS DIV for Countdown Timer segment----->
-    <div>
-      <h1 id="timer"> <span class="badge badge-secondary"></span></h1>
-      <img class="picoly" src=".\img\oly.jpg" alt="">
-    </div>
-
-    <!--ADD BOOTSTRAP TO THIS DIV for Flags segment----->
-    <div>  
-      <h1> Flags</h1>
-      <select id="countries" class="orm-control form-control-lg"></select>
-      <br> <br>
-      <img id="flag" src="" alt="flag"></div>
-      <br> <br> <br> <br>
+  <!-- Countdown Timer -->
+  <div class="container mt-5" id="timerflags">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 timer p-4 text-center">
+        <h1 id="timer"> <span class="badge badge-secondary"></span></h1>
+        <img class="picoly" src=".\img\oly.jpg" alt="">
+      </div>
+      <!-- Flags -->
+      <div class="col-lg-6 col-md-12 p-4 text-center flag">  
+        <h1> Flags</h1>
+        <select id="countries" class="orm-control form-control-lg"></select>
+        <br> <br>
+        <img id="flag" src="" alt="flag"></div>
+        <br> <br> <br> <br>
+      </div>
     </div>
   </div>
+
+  <!-- Question Accordion -->
+  <section id="questions" class="p-5 mt-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div class="accordion accordion-flush" id="questions">
+        <!-- Item 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one">
+              Steps for applying to become a volunteer for the Paris 2024 Games?
+            </button>
+          </h2>
+          <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions" >
+            <div class="accordion-body">
+              From March 2023, you will be able to access the online volunteers portal to submit your application. We will ask candidates to spend around 30 to 45 minutes filling out the online form, which will include questions relating to their identity, availability or experience for instance. To express their motivation, present their personality and explain what they hope to achieve from their mission, candidates will also be invited to answer questions whose answers will enable them to immediately check their suitability for each category of missions. They will also have the option to indicate the categories of missions for which they would not like to be offered a mission, but they will not be able to choose their mission. We would like to carefully review the applications and, for some missions, this will involve interviews with candidates. We will be able to inform candidates of our decision regarding their application during Automn 2023.
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two">
+              How many people will be taking part in the Mass Participation Marathon races?
+            </button>
+          </h2>
+          <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions" >
+            <div class="accordion-body">
+              There will be 20,024 participants for the marathon format and 20,024 participants for the 10k format.
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three">
+              When are the Paris 2024 Olympic and Paralympic Games?
+            </button>
+          </h2>
+          <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions" >
+            <div class="accordion-body">
+              <p class="bi-dot">The Paris 2024 Olympic Games will take place from 26 July to 11 August.</p> <br>
+              <p class="bi-dot">The Paris 2024 Paralympic Games will take place from 28 August to 8 September.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-four" >
+              How can we stay up-to-date with ticket-related news?
+            </button>
+          </h2>
+          <div id="question-four" class="accordion-collapse collapse" data-bs-parent="#questions" >
+            <div class="accordion-body">
+              <p>You can now sign up to <a href="https://club.paris2024.org/en/home">Le Club Paris 2024</a> to be kept up-to-date with ticket-related news and try to get priority access to ticket sales when they open.</p> <br>
+              <a href="https://tickets.paris2024.org/en/">Link to the Ticketing website</a>
+            </div>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-five">
+              How many spectators will be able to attend the ceremony?
+            </button>
+          </h2>
+          <div id="question-five" class="accordion-collapse collapse" data-bs-parent="#questions" >
+            <div class="accordion-body">
+              We have chosen to organise the opening ceremony for the Paris 2024 Olympic Games at the heart of the City so that we can share this unique experience with even more people. At least 600,000 spectators will be able to be part of the celebrations, along the 6 km route, on the lower and upper quays of the River Seine. This is around 10 times the capacity of an Olympic stadium.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="p-5 bg-dark text-white text-center position-relative mt-5">
+    <div class="container">
+      <p class="lead">Copyright &copy; 2023 | Sally, Reagan, Seyed, Sandra, Rajoo</p>
+      <a href="#" class="position-absolute bottom-0 end-0 p-5">
+        <i class="bi bi-arrow-up-circle h1"></i>
+      </a>
+    </div>
+  </footer>
   
-  <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
  
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous" ></script>
     <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   
   <!-- Code to the JavaScript File -->
-  <script src=".\js\currencyConvertor.js"></script>
-  <script src=".\js\flags.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+  <script src="/js/countDownTimer.js"></script>
+  <script src="/js/currencyConvertor.js"></script>
+  <script src="/js/flags.js"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>
