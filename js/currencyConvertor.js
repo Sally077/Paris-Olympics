@@ -1,7 +1,8 @@
 
     var data3=selectNumberStringvalue=eurkey="";
     var finalcal=0;
-    APIKEY1="rKYJpxskSyUuuicyEbuZ8Q3B2ZEI4XpwVr7fhzCY";
+  //  APIKEY1="rKYJpxskSyUuuicyEbuZ8Q3B2ZEI4XpwVr7fhzCY";
+	APIKEY1="yjH4j6cBWEnk8Y00yUnP6MC3rpBiGOM4jGPPxdza";
 $(document).ready(function() {
     $.ajax({
   url: 'https://api.freecurrencyapi.com/v1/latest?apikey='+ APIKEY1,
